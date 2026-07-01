@@ -4,6 +4,7 @@ import type { EvidenceItem, LessonStage } from '../../types/investigation';
 import FingerprintScanReveal, { isFingerprintEvidence } from './FingerprintScanReveal';
 import CsiMatchEvidenceBody, { isCsiMatchEvidence } from './CsiMatchEvidenceBody';
 import InterviewPickerPanel from './InterviewPickerPanel';
+import StartInterviewsButton from './StartInterviewsButton';
 import {
   TypewriterCursor,
   useTypewriter,
@@ -29,6 +30,7 @@ interface ReleaseCinematicProps {
   evidence?: EvidenceItem;
   interviewPickIds?: string[];
   onToggleInterviewPick?: (suspectId: string) => void;
+  onStartInterviews?: () => void;
   csiDisplayOrder?: readonly string[];
   onComplete: () => void;
 }
@@ -81,6 +83,7 @@ export default function ReleaseCinematic({
   evidence,
   interviewPickIds = [],
   onToggleInterviewPick = () => {},
+  onStartInterviews = () => {},
   csiDisplayOrder,
   onComplete,
 }: ReleaseCinematicProps) {
@@ -165,7 +168,10 @@ export default function ReleaseCinematic({
       return;
     }
     if (phase === 'interview-pick') {
-      onComplete();
+      if (interviewPickIds.length >= 2) {
+        onStartInterviews();
+        onComplete();
+      }
       return;
     }
     if (phase === 'typing-title') {
@@ -356,24 +362,14 @@ export default function ReleaseCinematic({
                     variant="cinematic"
                     rowOrder={csiDisplayOrder}
                   />
-                  <motion.button
-                    type="button"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3, duration: 0.8 }}
-                    onClick={(e) => {
-                      e.stopPropagation();
+                  <StartInterviewsButton
+                    variant="cinematic"
+                    selectedCount={interviewPickIds.length}
+                    onStart={() => {
+                      onStartInterviews();
                       onComplete();
                     }}
-                    className="mt-10 font-mono-label text-sm uppercase tracking-widest px-10 py-4 rounded-lg border transition-all hover:scale-[1.02]"
-                    style={{
-                      borderColor: accent,
-                      color: accent,
-                      background: 'rgb(124 58 237 / 0.12)',
-                    }}
-                  >
-                    Continue
-                  </motion.button>
+                  />
                 </div>
               )}
 

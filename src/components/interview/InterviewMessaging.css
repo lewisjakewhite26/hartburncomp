@@ -338,6 +338,35 @@
   overflow: hidden;
 }
 
+.interview-page--embedded {
+  height: 100%;
+  min-height: 0;
+}
+
+.interview-page--embedded .interview-page__shell {
+  max-width: none;
+  padding: 0 0.5rem 0.5rem;
+}
+
+.interview-page--embedded .interview-page__picker {
+  padding: 0.75rem 1rem 1rem;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.interview-page__waiting {
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.interview-page__waiting h1 {
+  margin: 0.75rem 0;
+  font-size: 1.5rem;
+  color: var(--magenta-accent);
+}
+
 .interview-page__shell {
   flex: 1;
   min-height: 0;
@@ -505,6 +534,10 @@
   font-weight: 600;
   text-align: left;
   cursor: pointer;
+}
+
+.interview-voice-settings__toggle--on {
+  color: rgb(167 243 208);
 }
 
 .interview-voice-settings__panel {

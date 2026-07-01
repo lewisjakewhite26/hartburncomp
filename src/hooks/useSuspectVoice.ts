@@ -1,17 +1,17 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { InterviewSuspectId } from '../data/interviewChat';
 import {
-  isElevenLabsConfigured,
+  isInterviewVoiceAvailable,
   isInterviewVoiceEnabled,
   setInterviewVoiceEnabled,
   SuspectVoicePlayer,
-} from '../lib/elevenLabs';
+} from '../lib/interviewVoice';
 
 export function useSuspectVoice(suspectId: InterviewSuspectId) {
   const playerRef = useRef<SuspectVoicePlayer | null>(null);
   const [speaking, setSpeaking] = useState(false);
   const [voiceEnabled, setVoiceEnabled] = useState(
-    () => isInterviewVoiceEnabled() && isElevenLabsConfigured(),
+    () => isInterviewVoiceEnabled() && isInterviewVoiceAvailable(),
   );
 
   if (!playerRef.current) {
@@ -25,11 +25,11 @@ export function useSuspectVoice(suspectId: InterviewSuspectId) {
   }, []);
 
   const speak = useCallback(
-    async (text: string) => {
-      if (!voiceEnabled || !isElevenLabsConfigured()) return;
+    async (text: string, turnId: string) => {
+      if (!voiceEnabled || !isInterviewVoiceAvailable()) return;
       setSpeaking(true);
       try {
-        await playerRef.current?.speak(text, suspectId);
+        await playerRef.current?.speak(text, suspectId, turnId);
       } catch {
         // Text reply still visible if voice fails.
       } finally {
@@ -56,6 +56,6 @@ export function useSuspectVoice(suspectId: InterviewSuspectId) {
     speaking,
     voiceEnabled,
     toggleVoice,
-    voiceAvailable: isElevenLabsConfigured(),
+    voiceAvailable: isInterviewVoiceAvailable(),
   };
 }

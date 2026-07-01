@@ -11,6 +11,10 @@ import { toggleInterviewSelection } from '../components/control/InterviewPickerP
 import { useFullscreen } from '../hooks/useFullscreen';
 import { FINAL_FIVE_IDS } from '../data/suspects';
 import { shuffleSuspectIds } from '../data/csiMatch';
+import {
+  getInterviewSession,
+  startInterviewSession,
+} from '../lib/interviewSession';
 
 export default function ControlPage() {
   const [releasedIndex, setReleasedIndex] = useState(0);
@@ -18,7 +22,12 @@ export default function ControlPage() {
   const [activeView, setActiveView] = useState<ControlView>('live');
   /** Pending stage index shown in cinematic before commit */
   const [pendingRelease, setPendingRelease] = useState<number | null>(null);
-  const [interviewPickIds, setInterviewPickIds] = useState<string[]>([]);
+  const [interviewPickIds, setInterviewPickIds] = useState<string[]>(
+    () => getInterviewSession()?.pickedIds ?? [],
+  );
+  const [interviewsStarted, setInterviewsStarted] = useState(
+    () => getInterviewSession()?.started ?? false,
+  );
   const [csiDisplayOrder, setCsiDisplayOrder] = useState<string[] | null>(null);
   const { ref: presentRef, active: isFullscreen, toggle: toggleFullscreen } = useFullscreen();
 
@@ -40,6 +49,12 @@ export default function ControlPage() {
   const toggleInterviewPick = useCallback((id: string) => {
     setInterviewPickIds((prev) => toggleInterviewSelection(prev, id));
   }, []);
+
+  const startInterviews = useCallback(() => {
+    if (interviewPickIds.length !== 2) return;
+    startInterviewSession(interviewPickIds);
+    setInterviewsStarted(true);
+  }, [interviewPickIds]);
 
   const releaseNext = () => {
     if (!canRelease || pendingRelease !== null) return;
@@ -94,6 +109,8 @@ export default function ControlPage() {
                 evidence={evidence}
                 interviewPickIds={interviewPickIds}
                 onToggleInterviewPick={toggleInterviewPick}
+                interviewsStarted={interviewsStarted}
+                onStartInterviews={startInterviews}
                 csiDisplayOrder={csiDisplayOrder ?? undefined}
               />
             </AnimatePresence>
@@ -112,6 +129,7 @@ export default function ControlPage() {
               evidence={pendingEvidence}
               interviewPickIds={interviewPickIds}
               onToggleInterviewPick={toggleInterviewPick}
+              onStartInterviews={startInterviews}
               csiDisplayOrder={csiDisplayOrder ?? undefined}
               onComplete={commitRelease}
             />

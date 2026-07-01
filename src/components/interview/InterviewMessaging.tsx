@@ -68,7 +68,7 @@ export default function InterviewMessaging({ suspectId, onComplete, onBack }: In
         },
       ]);
       setIsTyping(false);
-      void speak(answer);
+      void speak(answer, currentTurn.id);
 
       const nextIndex = turnIndex + 1;
       if (nextIndex >= suspect.turns.length) {

@@ -42,7 +42,8 @@ export const LESSON_STAGES: LessonStage[] = [
   {
     id: 'interviews',
     title: 'Interviews — pick two',
-    teacherCue: 'Class picks two on the board. Run those interviews your way.',
+    teacherCue:
+      'Class picks two on the board, then tap Start interviews. Pairs open the /interview link shown on screen.',
     displayBody: '',
   },
   {

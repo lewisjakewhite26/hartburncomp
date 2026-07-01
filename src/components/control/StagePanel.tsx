@@ -15,6 +15,8 @@ interface StagePanelProps {
   evidence?: EvidenceItem;
   interviewPickIds?: string[];
   onToggleInterviewPick?: (suspectId: string) => void;
+  interviewsStarted?: boolean;
+  onStartInterviews?: () => void;
   csiDisplayOrder?: readonly string[];
 }
 
@@ -25,6 +27,8 @@ export default function StagePanel({
   evidence,
   interviewPickIds = [],
   onToggleInterviewPick = () => {},
+  interviewsStarted = false,
+  onStartInterviews = () => {},
   csiDisplayOrder,
 }: StagePanelProps) {
   const [headerPhase, setHeaderPhase] = useState<HeaderPhase>('title');
@@ -48,6 +52,8 @@ export default function StagePanel({
         stage={stage}
         selectedIds={interviewPickIds}
         onToggle={onToggleInterviewPick}
+        interviewsStarted={interviewsStarted}
+        onStartInterviews={onStartInterviews}
         rowOrder={csiDisplayOrder}
       />
     );
