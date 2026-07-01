@@ -1,0 +1,496 @@
+body:has(.print-task-sheet) {
+  overflow: auto;
+  background: #e8e4dc;
+  color: #1a1a1a;
+}
+
+.print-task-sheet {
+  font-family: Georgia, "Times New Roman", serif;
+  max-width: 210mm;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.print-task-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  background: #1a1a1a;
+  color: #f5f5f5;
+  border-radius: 0.5rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.875rem;
+}
+
+.print-task-toolbar button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.375rem;
+  background: #2563eb;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.print-task-toolbar button:hover {
+  background: #1d4ed8;
+}
+
+.print-task-cover {
+  padding: 2rem 2.25rem;
+  background: #fff;
+  border: 2px solid #1a1a1a;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.08);
+}
+
+.print-task-cover__stamp {
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  padding: 0.35rem 0.75rem;
+  border: 3px double #b91c1c;
+  color: #b91c1c;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.print-task-cover h1 {
+  margin: 0 0 0.35rem;
+  font-size: 1.65rem;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+}
+
+.print-task-cover__subtitle {
+  margin: 0 0 1.5rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #444;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.print-task-cover__meta {
+  margin-bottom: 1.5rem;
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.print-task-cover__intro {
+  margin: 0 0 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.print-task-cover__steps {
+  margin: 0;
+  padding-left: 1.25rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.print-task-cover__steps li + li {
+  margin-top: 0.35rem;
+}
+
+.print-task-suspect {
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid #ccc;
+  background: #faf9f7;
+}
+
+.print-task-suspect__label {
+  margin: 0 0 0.25rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.print-task-suspect__name {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.print-task-suspect__role {
+  margin: 0.15rem 0 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.print-task-statement {
+  margin-bottom: 1.75rem;
+}
+
+.print-task-statement__label {
+  margin: 0 0 0.75rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.print-task-statement__paragraph {
+  margin: 0 0 1rem;
+  padding-left: 1rem;
+  border-left: 3px solid #ccc;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.print-task-statement__paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.print-task-counts {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.print-task-count {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem 1rem;
+  align-items: start;
+  padding: 0.85rem 1rem;
+  border: 1px solid #bbb;
+  background: #fff;
+}
+
+.print-task-count__number {
+  grid-row: span 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid #1a1a1a;
+  border-radius: 50%;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.print-task-count__label {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.print-task-count__hint {
+  margin: 0;
+  grid-column: 2;
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.45;
+}
+
+.print-task-count__answer {
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.print-task-count__box {
+  display: inline-block;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 2px solid #1a1a1a;
+  background: #fff;
+}
+
+.print-task-questions {
+  display: grid;
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.print-task-question {
+  padding: 1rem 1.25rem;
+  border: 1px solid #bbb;
+  background: #faf9f7;
+}
+
+.print-task-question__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.print-task-question__shape-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.print-task-shape {
+  flex-shrink: 0;
+}
+
+.print-task-question__number {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.print-task-question__label {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-align: right;
+}
+
+.print-task-question__equation {
+  margin: 0 0 0.5rem;
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.print-task-question__prompt {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.print-task-question__working {
+  min-height: 3.5rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.print-task-question__working span {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.print-task-question__answer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.print-task-code {
+  padding: 1.25rem 1.5rem;
+  border: 2px dashed #1a1a1a;
+  background: #fff;
+}
+
+.print-task-code h2 {
+  margin: 0 0 0.75rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.print-task-code p {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.print-task-code__digits {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.print-task-code__digit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.print-task-code__box {
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 2px solid #1a1a1a;
+  background: #fff;
+}
+
+.print-task-code--emphasis {
+  margin-top: 1.5rem;
+  border-style: solid;
+  background: #faf9f7;
+}
+
+.print-task-victim {
+  margin-bottom: 1.75rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid #bbb;
+  background: #fff;
+}
+
+.print-task-victim__label {
+  margin: 0 0 1rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.print-task-victim__facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem 1.25rem;
+  margin: 0 0 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.print-task-victim__fact {
+  margin: 0;
+}
+
+.print-task-victim__fact dt {
+  margin: 0 0 0.15rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #777;
+}
+
+.print-task-victim__fact dd {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.print-task-victim__bio .print-task-statement__paragraph {
+  margin-left: 0;
+  padding-left: 0;
+  border-left: none;
+}
+
+.print-task-birthyear {
+  margin-bottom: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px dashed #888;
+  background: #fff;
+}
+
+.print-task-birthyear h2 {
+  margin: 0 0 0.75rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.print-task-birthyear p {
+  margin: 0 0 1rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.print-task-birthyear__working {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.print-task-birthyear__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 1rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.print-task-birthyear__box {
+  display: inline-block;
+  width: 3rem;
+  height: 2.25rem;
+  border: 2px solid #1a1a1a;
+  background: #fff;
+}
+
+.print-task-birthyear__value {
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 1rem;
+}
+
+.print-task-birthyear__boxes {
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body:has(.print-task-sheet) {
+    background: #fff;
+  }
+
+  .print-task-sheet {
+    padding: 0;
+  }
+
+  .print-task-cover {
+    box-shadow: none;
+  }
+}

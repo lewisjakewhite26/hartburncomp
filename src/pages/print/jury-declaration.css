@@ -1,0 +1,104 @@
+.jury-declaration__page {
+  padding: 2rem 2.25rem;
+  background: #fff;
+  border: 2px solid #1a1a1a;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.08);
+}
+
+.jury-declaration__page h1 {
+  margin: 0 0 0.35rem;
+  font-size: 1.75rem;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+
+.jury-declaration__meta-fields {
+  margin-bottom: 2rem;
+}
+
+.jury-declaration__field {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.jury-declaration__field--short {
+  max-width: 12rem;
+}
+
+.jury-declaration__verdict {
+  margin-bottom: 2rem;
+  padding: 1.5rem 1.75rem;
+  border: 2px solid #1a1a1a;
+  background: #faf9f7;
+}
+
+.jury-declaration__verdict-text {
+  margin: 0 0 1.75rem;
+  font-size: 1.05rem;
+  line-height: 2.2;
+}
+
+.jury-declaration__blank {
+  display: inline-block;
+  min-width: 14rem;
+  border-bottom: 2px solid #1a1a1a;
+  vertical-align: baseline;
+}
+
+.jury-declaration__blank--name {
+  min-width: 16rem;
+}
+
+.jury-declaration__reason-lead {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.jury-declaration__evidence {
+  display: grid;
+  gap: 1.35rem;
+}
+
+.jury-declaration__line {
+  display: block;
+  width: 100%;
+  min-height: 1.75rem;
+  border-bottom: 1.5px solid #1a1a1a;
+}
+
+.jury-declaration__line--evidence {
+  min-height: 2rem;
+}
+
+.jury-declaration__signatures {
+  padding-top: 1.5rem;
+  border-top: 1px solid #ccc;
+}
+
+.jury-declaration__sign-off {
+  margin: 0 0 1.25rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.jury-declaration__signature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+@media print {
+  .jury-declaration__page {
+    box-shadow: none;
+  }
+}

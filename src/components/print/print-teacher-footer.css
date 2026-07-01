@@ -1,0 +1,55 @@
+.print-teacher-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 2px dashed #999;
+  page-break-inside: avoid;
+}
+
+.print-teacher-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.65rem 1.25rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid #bbb;
+  background: #f5f3ef;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.print-teacher-footer__badge {
+  flex-shrink: 0;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid #888;
+  background: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.print-teacher-footer__instruction {
+  margin: 0;
+  flex: 1;
+  min-width: 12rem;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #333;
+}
+
+.print-teacher-footer__instruction strong {
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+@media print {
+  .print-teacher-footer {
+    margin-top: 1.5rem;
+  }
+
+  .print-teacher-footer__inner {
+    background: #f8f8f8;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
