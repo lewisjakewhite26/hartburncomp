@@ -488,9 +488,188 @@ body:has(.print-task-sheet) {
 
   .print-task-sheet {
     padding: 0;
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .print-task-sheet:last-child {
+    page-break-after: auto;
+    break-after: auto;
   }
 
   .print-task-cover {
     box-shadow: none;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    padding: 0.55rem 0.7rem;
+    border-width: 1.5px;
+  }
+
+  .print-task-cover__stamp {
+    margin-bottom: 0.45rem;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.62rem;
+  }
+
+  .print-task-cover h1 {
+    font-size: 1.15rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .print-task-cover__subtitle {
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .print-task-cover__meta {
+    margin-bottom: 0.5rem;
+    font-size: 0.65rem;
+    line-height: 1.45;
+  }
+
+  .print-task-cover__intro {
+    margin-bottom: 0.45rem;
+    font-size: 0.75rem;
+    line-height: 1.45;
+  }
+
+  .print-task-cover__steps {
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    font-size: 0.72rem;
+    line-height: 1.35;
+  }
+
+  .print-task-cover__steps li + li {
+    margin-top: 0.15rem;
+  }
+
+  .print-task-suspect {
+    margin-bottom: 0.45rem;
+    padding: 0.45rem 0.6rem;
+  }
+
+  .print-task-suspect__name {
+    font-size: 0.95rem;
+  }
+
+  .print-task-statement {
+    margin-bottom: 0.5rem;
+  }
+
+  .print-task-statement__paragraph {
+    margin-bottom: 0.45rem;
+    padding-left: 0.65rem;
+    font-size: 0.72rem;
+    line-height: 1.42;
+  }
+
+  .print-task-counts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .print-task-count {
+    padding: 0.45rem 0.55rem;
+  }
+
+  .print-task-count__label {
+    font-size: 0.75rem;
+  }
+
+  .print-task-count__hint {
+    font-size: 0.68rem;
+    line-height: 1.3;
+  }
+
+  .print-task-questions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .print-task-question {
+    padding: 0.45rem 0.55rem;
+  }
+
+  .print-task-question__equation {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .print-task-question__prompt {
+    margin-bottom: 0.35rem;
+    font-size: 0.68rem;
+  }
+
+  .print-task-question__working {
+    min-height: 1.75rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .print-task-count__box,
+  .print-task-code__box {
+    width: 1.85rem;
+    height: 1.85rem;
+  }
+
+  .print-task-code {
+    padding: 0.5rem 0.65rem;
+    margin-top: 0.35rem;
+  }
+
+  .print-task-code h2 {
+    margin-bottom: 0.35rem;
+    font-size: 0.72rem;
+  }
+
+  .print-task-code p {
+    margin-bottom: 0.45rem;
+    font-size: 0.72rem;
+    line-height: 1.35;
+  }
+
+  .print-task-code__digits {
+    gap: 0.45rem;
+  }
+
+  .print-task-code--emphasis {
+    margin-top: 0.45rem;
+  }
+
+  .print-task-victim {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0.65rem;
+  }
+
+  .print-task-victim__facts {
+    gap: 0.35rem 0.75rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .print-task-victim__fact dd {
+    font-size: 0.75rem;
+  }
+
+  .print-task-birthyear {
+    margin-bottom: 0.45rem;
+    padding: 0.5rem 0.65rem;
+  }
+
+  .print-task-birthyear p {
+    margin-bottom: 0.45rem;
+    font-size: 0.75rem;
+  }
+
+  .print-task-birthyear__row {
+    font-size: 0.75rem;
+    gap: 0.4rem;
+  }
+
+  .print-task-birthyear__box {
+    width: 2.25rem;
+    height: 1.65rem;
   }
 }

@@ -1,6 +1,7 @@
 import { COVER_META } from '../../data/printCopy';
 import { SPAG_TASK, TASK_CODE_LENGTH } from '../../data/taskContent';
 import PrintTeacherFooter from '../../components/print/PrintTeacherFooter';
+import './print-shared.css';
 import './print-tasks.css';
 
 const CODE_LABELS = ['1st digit', '2nd digit', '3rd digit', '4th digit'] as const;

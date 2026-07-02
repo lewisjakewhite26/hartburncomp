@@ -100,5 +100,54 @@
 @media print {
   .jury-declaration__page {
     box-shadow: none;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    padding: 0.55rem 0.7rem;
+    border-width: 1.5px;
+  }
+
+  .jury-declaration__page h1 {
+    font-size: 1.2rem;
+  }
+
+  .jury-declaration__meta-fields {
+    margin-bottom: 0.75rem;
+  }
+
+  .jury-declaration__verdict {
+    margin-bottom: 0.75rem;
+    padding: 0.65rem 0.75rem;
+  }
+
+  .jury-declaration__verdict-text {
+    margin-bottom: 0.75rem;
+    font-size: 0.82rem;
+    line-height: 1.65;
+  }
+
+  .jury-declaration__reason-lead {
+    margin-bottom: 0.5rem;
+    font-size: 0.82rem;
+  }
+
+  .jury-declaration__evidence {
+    gap: 0.65rem;
+  }
+
+  .jury-declaration__line--evidence {
+    min-height: 1.35rem;
+  }
+
+  .jury-declaration__signatures {
+    padding-top: 0.65rem;
+  }
+
+  .jury-declaration__signature-grid {
+    gap: 0.75rem;
+  }
+
+  .print-task-cover__intro {
+    margin-bottom: 0.45rem;
+    font-size: 0.75rem;
   }
 }

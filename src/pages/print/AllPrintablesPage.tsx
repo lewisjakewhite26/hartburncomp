@@ -4,6 +4,7 @@ import SpagTaskPage from './SpagTaskPage';
 import MathsTaskPage from './MathsTaskPage';
 import VictimBioTaskPage from './VictimBioTaskPage';
 import JuryDeclarationPage from './JuryDeclarationPage';
+import './print-shared.css';
 import './print-bundle.css';
 
 export default function AllPrintablesPage() {

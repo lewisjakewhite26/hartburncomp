@@ -183,18 +183,20 @@ body:has(.suspect-bio-sheet) {
   gap: 0;
 }
 
+.suspect-bio-page {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
 .suspect-bio-card {
   page-break-inside: avoid;
   break-inside: avoid;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   padding: 1rem 1.15rem;
   background: #fff;
   border: 1.5px solid #1a1a1a;
   box-shadow: 0 1px 4px rgb(0 0 0 / 0.06);
-}
-
-.suspect-bio-card:nth-child(odd) {
-  page-break-after: always;
 }
 
 .suspect-bio-card__header {
@@ -377,16 +379,137 @@ body:has(.suspect-bio-sheet) {
   }
 
   .suspect-bio-cover {
-    min-height: auto;
+    page-break-after: always;
+    break-after: page;
+    padding: 0.55rem 0.75rem;
+    border-width: 1.5px;
+  }
+
+  .suspect-bio-cover__stamp {
+    margin-bottom: 0.65rem;
+    padding: 0.25rem 0.55rem;
+    font-size: 0.62rem;
+  }
+
+  .suspect-bio-cover h1 {
+    font-size: 1.25rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .suspect-bio-cover__subtitle {
+    margin-bottom: 0.65rem;
+    font-size: 0.82rem;
+  }
+
+  .suspect-bio-cover__meta {
+    margin-bottom: 0.65rem;
+    padding: 0.45rem 0.6rem;
+    font-size: 0.68rem;
+    line-height: 1.45;
+  }
+
+  .suspect-bio-cover__case-open {
+    margin-bottom: 0.65rem;
+    padding-bottom: 0.55rem;
+  }
+
+  .suspect-bio-cover__case-open h2 {
+    margin-bottom: 0.45rem;
+    font-size: 0.78rem;
+  }
+
+  .suspect-bio-cover__case-open p {
+    margin-bottom: 0.4rem;
+    font-size: 0.72rem;
+    line-height: 1.42;
+  }
+
+  .suspect-bio-cover__instructions h2 {
+    margin: 0.65rem 0 0.3rem;
+    font-size: 0.78rem;
+  }
+
+  .suspect-bio-cover__instructions {
+    column-count: 2;
+    column-gap: 0.85rem;
+  }
+
+  .suspect-bio-cover__instructions > p,
+  .suspect-bio-cover__instructions > ul {
+    font-size: 0.72rem;
+    line-height: 1.4;
+  }
+
+  .suspect-bio-cover__instructions li {
+    margin-bottom: 0.25rem;
+  }
+
+  .suspect-bio-cover__forensic-item dt {
+    font-size: 0.68rem;
+  }
+
+  .suspect-bio-cover__forensic-item dd {
+    font-size: 0.7rem;
+    line-height: 1.4;
+  }
+
+  .suspect-bio-cover__forensic-item {
+    margin-bottom: 0.45rem;
+  }
+
+  .suspect-bio-page {
+    page-break-after: always;
+    break-after: page;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    gap: 0.45rem;
+  }
+
+  .suspect-bio-page:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+
+  .suspect-bio-card {
+    padding: 0.55rem 0.65rem;
+    border-width: 1px;
+  }
+
+  .suspect-bio-card__name {
+    font-size: 0.95rem;
+  }
+
+  .suspect-bio-card__role {
+    margin-bottom: 0.4rem;
+    font-size: 0.72rem;
+  }
+
+  .suspect-bio-card__facts {
+    gap: 0.3rem 0.75rem;
+    margin-bottom: 0.4rem;
+    font-size: 0.72rem;
+  }
+
+  .suspect-bio-card__statement {
+    margin-bottom: 0.4rem;
+    padding: 0.4rem 0.5rem;
+    font-size: 0.72rem;
+    line-height: 1.42;
+  }
+
+  .suspect-bio-card__notes-line--tall {
+    min-height: 1.85rem;
+    background: repeating-linear-gradient(
+      transparent,
+      transparent 1.1rem,
+      #999 1.1rem,
+      #999 calc(1.1rem + 1px)
+    );
   }
 
   .suspect-bio-cover__case-open,
   .suspect-bio-cover__instructions {
-    page-break-inside: auto;
+    page-break-inside: avoid;
+    break-inside: avoid;
   }
-}
-
-@page {
-  size: A4 portrait;
-  margin: 12mm;
 }

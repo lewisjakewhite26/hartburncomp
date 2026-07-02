@@ -6,6 +6,7 @@ import {
   TreadIcon,
 } from '../../components/print/ForensicIcons';
 import PrintTeacherFooter from '../../components/print/PrintTeacherFooter';
+import './print-shared.css';
 import './suspect-forensics.css';
 
 interface SuspectForensicSheetPageProps {

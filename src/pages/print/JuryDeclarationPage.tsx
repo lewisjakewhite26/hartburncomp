@@ -1,6 +1,7 @@
 import { COVER_META } from '../../data/printCopy';
 import { JURY_DECLARATION } from '../../data/juryDeclaration';
 import PrintTeacherFooter from '../../components/print/PrintTeacherFooter';
+import './print-shared.css';
 import './print-tasks.css';
 import './jury-declaration.css';
 

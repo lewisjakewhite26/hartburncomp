@@ -12,10 +12,19 @@ import {
   TREAD_CHOICES,
 } from '../../components/print/ForensicIcons';
 import PrintTeacherFooter from '../../components/print/PrintTeacherFooter';
+import './print-shared.css';
 import './suspect-bios.css';
 
 interface SuspectBioSheetPageProps {
   bundle?: boolean;
+}
+
+function suspectPages<T>(items: T[], perPage: number): T[][] {
+  const pages: T[][] = [];
+  for (let i = 0; i < items.length; i += perPage) {
+    pages.push(items.slice(i, i + perPage));
+  }
+  return pages;
 }
 
 export default function SuspectBioSheetPage({ bundle = false }: SuspectBioSheetPageProps) {
@@ -85,7 +94,11 @@ export default function SuspectBioSheetPage({ bundle = false }: SuspectBioSheetP
       </section>
 
       <div className="suspect-bio-grid">
-        {SUSPECTS.map((suspect, index) => (
+        {suspectPages(SUSPECTS, 2).map((pageSuspects, pageIndex) => (
+          <div key={pageIndex} className="suspect-bio-page">
+            {pageSuspects.map((suspect) => {
+              const index = SUSPECTS.findIndex((s) => s.id === suspect.id);
+              return (
           <article key={suspect.id} className="suspect-bio-card">
             <div className="suspect-bio-card__header">
               <h2 className="suspect-bio-card__name">{suspect.name}</h2>
@@ -130,6 +143,9 @@ export default function SuspectBioSheetPage({ bundle = false }: SuspectBioSheetP
               </label>
             </div>
           </article>
+              );
+            })}
+          </div>
         ))}
       </div>
 

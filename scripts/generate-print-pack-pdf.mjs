@@ -45,10 +45,10 @@ async function main() {
     format: 'A4',
     printBackground: true,
     margin: {
-      top: '12mm',
-      right: '12mm',
-      bottom: '12mm',
-      left: '12mm',
+      top: '10mm',
+      right: '10mm',
+      bottom: '10mm',
+      left: '10mm',
     },
   });
 

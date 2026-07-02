@@ -44,12 +44,27 @@
 
 @media print {
   .print-teacher-footer {
-    margin-top: 1.5rem;
+    margin-top: 0.35rem;
+    padding-top: 0.35rem;
+    border-top-width: 1px;
+    page-break-inside: avoid;
+    break-inside: avoid;
   }
 
   .print-teacher-footer__inner {
+    padding: 0.35rem 0.5rem;
     background: #f8f8f8;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+  }
+
+  .print-teacher-footer__badge {
+    font-size: 0.58rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  .print-teacher-footer__instruction {
+    font-size: 0.68rem;
+    line-height: 1.3;
   }
 }

@@ -8,6 +8,7 @@ import {
 } from '../../data/taskContent';
 import PrintTeacherFooter from '../../components/print/PrintTeacherFooter';
 import TaskShapeIcon, { taskShapeLabel } from '../../components/print/TaskShapeIcon';
+import './print-shared.css';
 import './print-tasks.css';
 
 interface MathsTaskPageProps {

@@ -45,7 +45,6 @@ body:has(.suspect-forensic-sheet) {
 }
 
 .suspect-forensic-cover {
-  page-break-after: always;
   margin-bottom: 1rem;
   padding: 1.5rem 1.75rem;
   background: #fff;
@@ -176,5 +175,74 @@ body:has(.suspect-forensic-sheet) {
   .suspect-forensic-cover,
   .suspect-forensic-card {
     box-shadow: none;
+  }
+
+  .suspect-forensic-cover {
+    margin-bottom: 0.35rem;
+    padding: 0.5rem 0.65rem;
+    border-width: 1.5px;
+  }
+
+  .suspect-forensic-cover__stamp {
+    margin-bottom: 0.45rem;
+    font-size: 0.62rem;
+  }
+
+  .suspect-forensic-cover h1 {
+    font-size: 1.1rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .suspect-forensic-cover p {
+    font-size: 0.72rem;
+    line-height: 1.4;
+  }
+
+  .suspect-forensic-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.3rem;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .suspect-forensic-card {
+    padding: 0.35rem 0.4rem;
+    border-width: 1px;
+  }
+
+  .suspect-forensic-card__header h2 {
+    font-size: 0.68rem;
+  }
+
+  .suspect-forensic-card__header span {
+    font-size: 0.58rem;
+  }
+
+  .suspect-forensic-card__role {
+    margin-bottom: 0.3rem;
+    font-size: 0.62rem;
+  }
+
+  .suspect-forensic-card__sample {
+    margin-bottom: 0.3rem;
+    padding: 0.25rem;
+  }
+
+  .suspect-forensic-card__sample-label {
+    font-size: 0.55rem;
+  }
+
+  .suspect-forensic-card__sample-name {
+    font-size: 0.58rem;
+  }
+
+  .suspect-forensic-sheet .forensic-icon {
+    width: 22px;
+    height: 14px;
+  }
+
+  .suspect-forensic-sheet .forensic-icon--tread {
+    width: 36px;
+    height: 18px;
   }
 }

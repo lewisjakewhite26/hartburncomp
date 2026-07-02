@@ -55,6 +55,13 @@ body:has(.print-bundle) {
   max-width: none;
   margin: 0;
   padding: 0;
+  page-break-after: always;
+  break-after: page;
+}
+
+.print-bundle .print-bundle-section:last-child {
+  page-break-after: auto;
+  break-after: auto;
 }
 
 @media print {
@@ -70,9 +77,10 @@ body:has(.print-bundle) {
   .print-bundle-toolbar {
     display: none !important;
   }
-}
 
-@page {
-  size: A4 portrait;
-  margin: 12mm;
+  /* Task sheets inside bundle already break per section; avoid double breaks */
+  .print-bundle .print-task-sheet {
+    page-break-after: auto;
+    break-after: auto;
+  }
 }

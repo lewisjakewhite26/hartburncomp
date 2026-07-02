@@ -1,6 +1,7 @@
 import { COVER_META } from '../../data/printCopy';
 import { CASE_YEAR, TASK_CODE_LENGTH, VICTIM_BIO_TASK } from '../../data/taskContent';
 import PrintTeacherFooter from '../../components/print/PrintTeacherFooter';
+import './print-shared.css';
 import './print-tasks.css';
 
 interface VictimBioTaskPageProps {
