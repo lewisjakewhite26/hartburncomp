@@ -58,7 +58,7 @@ export const INTERVIEW_SUSPECTS: InterviewSuspectProfile[] = [
             "You were in the staff room at poison o'clock. Did you touch the coffee, the mugs, or the sugar bowl?",
         },
         answer:
-          "I went to the cupboard. Is that a crime? I didn't stop for a brew, I didn't socialize, and I certainly didn't hang around the sugar jar. I don't even like the coffee here; it tastes like burnt rubber. I grabbed my gear and bolted. I was back on the field within two minutes.",
+          "I went to the cupboard. Is that a crime? I didn't stop for a brew, I didn't socialise, and I certainly didn't hang around the sugar jar. I don't even like the coffee here; it tastes like burnt rubber. I grabbed my gear and bolted. I was back on the field within two minutes.",
       },
       {
         id: 'cupboard',
@@ -103,7 +103,7 @@ export const INTERVIEW_SUSPECTS: InterviewSuspectProfile[] = [
         topic: 'Motive',
         prompts: {
           soft: 'Was there anything between you and Mr White we should know about?',
-          neutral: "Mr White got the Sports Day organizer role, didn't he? How did that make you feel?",
+          neutral: "Mr White got the Sports Day organiser role, didn't he? How did that make you feel?",
           accusatory:
             'You wanted Sports Day. White got it. That gives you a reason to hurt him.',
         },

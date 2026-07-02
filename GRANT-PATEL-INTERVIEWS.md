@@ -10,7 +10,7 @@ Tone: Arrogant, fast-talking, defensive. Treats the interview like a nuisance.
 ### Staff room
 **Q:** You were in the staff room at 11:15. Did you go anywhere near the coffee station?
 
-**A:** I went to the cupboard. Is that a crime? I didn't stop for a brew, I didn't socialize, and I certainly didn't hang around the sugar jar. I don't even like the coffee here; it tastes like burnt rubber. I grabbed my gear and bolted. I was back on the field within two minutes.
+**A:** I went to the cupboard. Is that a crime? I didn't stop for a brew, I didn't socialise, and I certainly didn't hang around the sugar jar. I don't even like the coffee here; it tastes like burnt rubber. I grabbed my gear and bolted. I was back on the field within two minutes.
 
 ### The cupboard *(after Alibi and Staff room)*
 **Q:** We checked the PE store cupboards. They were locked all morning. If you were getting cones, why were you in the staff room cupboard?
@@ -28,7 +28,7 @@ Tone: Arrogant, fast-talking, defensive. Treats the interview like a nuisance.
 **A:** Seriously? My shoes are standard issue from the school supplier. Half the staff has these. And my prints are on file for the DBS check. Of course you're going to find 'matches' if you go looking for them. You're just trying to pin this on the PE guy because it's the easiest path, aren't you?
 
 ### Motive
-**Q:** Mr White got the Sports Day organizer role, didn't he? How did that make you feel?
+**Q:** Mr White got the Sports Day organiser role, didn't he? How did that make you feel?
 
 **A:** It's frustrating. I've got three years of seniority on him. But I'm a professional, alright? I don't settle my grievances by... what, poisoning the decaf? That's ridiculous.
 
