@@ -31,8 +31,8 @@ export default function DebriefReveal() {
       transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
       className="h-full min-h-0 hud-panel hud-panel-active flex flex-col overflow-hidden"
     >
-      <div className="px-10 lg:px-14 pt-10 lg:pt-12 pb-6 border-b border-[var(--violet-border)]/50 shrink-0">
-        <p className="font-mono-label text-sm uppercase tracking-[0.3em] text-[var(--text-muted)] mb-3">
+      <div className="px-4 sm:px-8 lg:px-14 pt-6 sm:pt-10 lg:pt-12 pb-4 sm:pb-6 border-b border-[var(--violet-border)]/50 shrink-0">
+        <p className="font-mono-label text-xs sm:text-sm uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[var(--text-muted)] mb-2 sm:mb-3">
           Case closed
         </p>
         {!titleDone ? (
@@ -40,13 +40,13 @@ export default function DebriefReveal() {
             text={grant?.name ?? 'Mr Grant'}
             active
             timing={TYPEWRITER_TITLE}
-            className="text-4xl lg:text-6xl font-semibold text-glow-magenta tracking-tight"
+            className="text-2xl sm:text-4xl lg:text-6xl font-semibold text-glow-magenta tracking-tight"
             cursorBright
             onDone={() => setTitleDone(true)}
           />
         ) : (
           <>
-            <h1 className="text-4xl lg:text-6xl font-semibold text-glow-magenta tracking-tight">
+            <h1 className="text-2xl sm:text-4xl lg:text-6xl font-semibold text-glow-magenta tracking-tight">
               {grant?.name ?? 'Mr Grant'}
             </h1>
             <motion.div
@@ -59,14 +59,14 @@ export default function DebriefReveal() {
                 text={roleLine}
                 active
                 timing={TYPEWRITER_BODY}
-                className="text-xl lg:text-2xl text-[var(--text-muted)]"
+                className="text-base sm:text-xl lg:text-2xl text-[var(--text-muted)]"
               />
             </motion.div>
           </>
         )}
       </div>
 
-      <div className="flex-1 overflow-y-auto scrollbar-custom px-10 lg:px-14 py-8 grid lg:grid-cols-2 gap-10">
+      <div className="flex-1 overflow-y-auto scrollbar-custom px-4 sm:px-8 lg:px-14 py-5 sm:py-8 grid lg:grid-cols-2 gap-6 sm:gap-10">
         <div>
           <h2 className="font-mono-label text-sm uppercase tracking-widest text-glow-violet mb-5">
             Evidence trail
@@ -78,7 +78,7 @@ export default function DebriefReveal() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                className="flex gap-4 text-xl lg:text-2xl text-[var(--text-body)]"
+                className="flex gap-3 sm:gap-4 text-base sm:text-xl lg:text-2xl text-[var(--text-body)]"
               >
                 <span className="font-mono-label text-[var(--magenta-accent)] shrink-0">
                   {String(i + 1).padStart(2, '0')}

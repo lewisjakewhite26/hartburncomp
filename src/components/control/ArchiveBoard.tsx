@@ -9,20 +9,22 @@ interface ArchiveBoardProps {
 export default function ArchiveBoard({ archivedIds, onToggle }: ArchiveBoardProps) {
   return (
     <div className="h-full min-h-0 hud-panel flex flex-col overflow-hidden">
-      <div className="px-8 pt-8 pb-4 border-b border-[var(--violet-border)]/50 shrink-0 flex justify-between items-end">
+      <div className="px-4 sm:px-8 pt-5 sm:pt-8 pb-3 sm:pb-4 border-b border-[var(--violet-border)]/50 shrink-0 flex flex-col sm:flex-row sm:justify-between sm:items-end gap-2">
         <div>
-          <p className="font-mono-label text-sm uppercase tracking-[0.25em] text-[var(--text-muted)] mb-2">
+          <p className="font-mono-label text-xs sm:text-sm uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[var(--text-muted)] mb-1.5 sm:mb-2">
             Suspect archive
           </p>
-          <h2 className="text-3xl font-semibold text-glow-violet">Tap to archive after discussion</h2>
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-glow-violet leading-snug">
+            Tap to archive after discussion
+          </h2>
         </div>
-        <p className="font-mono-label text-lg text-[var(--magenta-accent)]">
+        <p className="font-mono-label text-base sm:text-lg text-[var(--magenta-accent)] shrink-0">
           {archivedIds.length} / {SUSPECTS.length}
         </p>
       </div>
 
-      <div className="flex-1 overflow-y-auto scrollbar-custom p-6">
-        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
+      <div className="flex-1 overflow-y-auto scrollbar-custom p-3 sm:p-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-3 sm:gap-4">
           {SUSPECTS.map((s, i) => {
             const archived = archivedIds.includes(s.id);
             return (

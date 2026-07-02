@@ -39,8 +39,8 @@ export default function EvidenceHub({ items }: EvidenceHubProps) {
   const hasSummary = Boolean(selected?.summary.trim());
 
   return (
-    <div className="h-full min-h-0 flex gap-4">
-      <div className="w-72 shrink-0 hud-panel flex flex-col overflow-hidden">
+    <div className="evidence-hub h-full min-h-0 flex flex-col md:flex-row gap-3 md:gap-4">
+      <div className="w-full md:w-72 max-h-44 md:max-h-none shrink-0 hud-panel flex flex-col overflow-hidden">
         <div className="p-4 border-b border-[var(--violet-border)]/50 shrink-0">
           <h2 className="font-mono-label text-xs uppercase tracking-widest text-glow-violet">Released files</h2>
         </div>
@@ -76,7 +76,7 @@ export default function EvidenceHub({ items }: EvidenceHubProps) {
             transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
             className="flex-1 min-w-0 hud-panel hud-panel-active flex flex-col overflow-hidden"
           >
-            <div className="px-10 pt-10 pb-5 border-b border-[var(--violet-border)]/50 shrink-0">
+            <div className="px-4 sm:px-8 lg:px-10 pt-6 sm:pt-10 pb-4 sm:pb-5 border-b border-[var(--violet-border)]/50 shrink-0">
               <p className="font-mono-label text-sm uppercase tracking-[0.25em] text-[var(--text-muted)] mb-2">
                 Evidence file
               </p>
@@ -86,18 +86,18 @@ export default function EvidenceHub({ items }: EvidenceHubProps) {
                   text={selected.title}
                   active
                   timing={TYPEWRITER_TITLE}
-                  className="text-3xl lg:text-4xl font-semibold text-glow-violet leading-tight"
+                  className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-glow-violet leading-tight"
                   cursorBright
                   onDone={() => setHeaderPhase(hasSummary ? 'subtitle' : 'done')}
                 />
               ) : (
-                <h1 className="text-3xl lg:text-4xl font-semibold text-glow-violet leading-tight">
+                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-glow-violet leading-tight">
                   {selected.title}
                 </h1>
               )}
 
               {hasSummary && headerPhase === 'subtitle' && (
-                <div className="text-xl text-[var(--text-muted)] mt-3 min-h-[1.3em]">
+                <div className="text-base sm:text-xl text-[var(--text-muted)] mt-2 sm:mt-3 min-h-[1.3em]">
                   <TypewriterBlock
                     text={selected.summary}
                     active
@@ -108,11 +108,11 @@ export default function EvidenceHub({ items }: EvidenceHubProps) {
               )}
 
               {hasSummary && headerPhase === 'done' && (
-                <p className="text-xl text-[var(--text-muted)] mt-3">{selected.summary}</p>
+                <p className="text-base sm:text-xl text-[var(--text-muted)] mt-2 sm:mt-3">{selected.summary}</p>
               )}
             </div>
 
-            <div className="flex-1 overflow-y-auto scrollbar-custom px-10 py-8">
+            <div className="flex-1 overflow-y-auto scrollbar-custom px-4 sm:px-8 lg:px-10 py-5 sm:py-8">
               {headerPhase === 'done' &&
                 (isFingerprintEvidence(selected.id) ? (
                   <FingerprintEvidenceBody content={selected.content} size="large" />

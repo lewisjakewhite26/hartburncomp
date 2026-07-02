@@ -614,3 +614,39 @@
   line-height: 1.45;
   color: var(--text-muted);
 }
+
+@media (max-width: 639px) {
+  .interview-chat__header {
+    padding: 0.75rem 0.85rem 0.65rem;
+  }
+
+  .interview-chat__name {
+    font-size: 0.95rem;
+  }
+
+  .interview-chat__thread {
+    padding: 0.75rem 0.85rem 1rem;
+    gap: 0.65rem;
+  }
+
+  .interview-chat__bubble {
+    max-width: 88%;
+    font-size: 0.88rem;
+  }
+
+  .interview-chat__composer {
+    padding: 0.65rem 0.75rem 0.85rem;
+  }
+
+  .interview-page__picker {
+    padding: 0.85rem;
+  }
+
+  .interview-page__picker-header h1 {
+    font-size: 1.15rem;
+  }
+
+  .interview-page__suspect-card {
+    padding: 0.85rem 0.95rem;
+  }
+}

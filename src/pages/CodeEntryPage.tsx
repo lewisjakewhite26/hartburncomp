@@ -156,10 +156,10 @@ export default function CodeEntryPage() {
 
   return (
     <div
-      className="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6"
+      className="min-h-[100dvh] flex flex-col items-center justify-center p-3 sm:p-6"
       style={{ background: 'var(--bg-deep)' }}
     >
-      <div className="w-full max-w-lg hud-panel p-6 sm:p-8">
+      <div className="w-full max-w-lg hud-panel p-4 sm:p-6 md:p-8">
         <h1 className="font-mono-label text-center text-sm uppercase tracking-[0.3em] text-glow-violet mb-1">
           Access terminal
         </h1>
@@ -181,7 +181,7 @@ export default function CodeEntryPage() {
                 <p className="font-mono-label text-xs uppercase tracking-widest text-[var(--text-muted)] mb-3 text-center">
                   Group
                 </p>
-                <div className="grid grid-cols-4 gap-2">
+                <div className="grid grid-cols-4 gap-1.5 sm:gap-2">
                   {Array.from({ length: 8 }, (_, i) => i + 1).map((n) => (
                     <button
                       key={n}
@@ -248,14 +248,14 @@ export default function CodeEntryPage() {
             >
               {result === 'correct' ? (
                 <>
-                  <div className="text-6xl mb-4 text-emerald-400">✓</div>
-                  <p className="text-2xl font-semibold text-emerald-400 mb-2">Access granted</p>
+                  <div className="text-5xl sm:text-6xl mb-4 text-emerald-400">✓</div>
+                  <p className="text-xl sm:text-2xl font-semibold text-emerald-400 mb-2">Access granted</p>
                   <p className="text-[var(--text-muted)]">Group {group}. Tell your teacher.</p>
                 </>
               ) : (
                 <>
-                  <div className="text-6xl mb-4 text-red-400">✗</div>
-                  <p className="text-2xl font-semibold text-red-400 mb-2">Access denied</p>
+                  <div className="text-5xl sm:text-6xl mb-4 text-red-400">✗</div>
+                  <p className="text-xl sm:text-2xl font-semibold text-red-400 mb-2">Access denied</p>
                   <p className="text-[var(--text-muted)] mb-6">Check the paper and try again</p>
                 </>
               )}

@@ -76,7 +76,7 @@ export default function ControlPage() {
   return (
     <div
       ref={presentRef}
-      className="h-screen w-screen flex overflow-hidden"
+      className="control-shell h-[100dvh] w-screen flex flex-col md:flex-row overflow-hidden"
       style={{ background: 'var(--bg-deep)' }}
     >
       <ControlSideNav
@@ -100,7 +100,7 @@ export default function ControlPage() {
           </div>
         )}
 
-        <main className="flex-1 min-w-0 min-h-0 p-4 lg:p-6">
+        <main className="flex-1 min-w-0 min-h-0 overflow-y-auto p-2 sm:p-4 lg:p-6">
           {activeView === 'live' && (
             <AnimatePresence mode="wait">
               <StagePanel

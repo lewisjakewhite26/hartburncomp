@@ -38,10 +38,10 @@ export default function ControlSideNav({
   return (
     <>
     <aside
-      className="w-56 lg:w-64 shrink-0 flex flex-col h-full border-r border-[var(--violet-border)]/80"
+      className="control-sidenav w-full md:w-56 lg:w-64 shrink-0 flex flex-col md:h-full border-b md:border-b-0 border-r-0 md:border-r border-[var(--violet-border)]/80"
       style={{ background: 'rgb(12 10 20 / 0.95)' }}
     >
-      <div className="p-5 border-b border-[var(--violet-border)]/50">
+      <div className="control-sidenav__header p-3 sm:p-5 border-b border-[var(--violet-border)]/50">
         <div className="flex items-start justify-between gap-2">
           <div className="min-w-0">
             <p className="font-mono-label text-[10px] uppercase tracking-[0.35em] text-[var(--text-muted)]">
@@ -53,7 +53,7 @@ export default function ControlSideNav({
         </div>
       </div>
 
-      <nav className="flex-1 p-3 flex flex-col gap-1 min-h-0">
+      <nav className="control-sidenav__nav flex md:flex-1 p-2 md:p-3 flex-row md:flex-col gap-1 min-h-0 overflow-x-auto md:overflow-x-visible md:overflow-y-auto scrollbar-custom">
         {NAV.map((item) => {
           const active = activeView === item.id;
           const badge =
@@ -67,7 +67,7 @@ export default function ControlSideNav({
               key={item.id}
               type="button"
               onClick={() => onViewChange(item.id)}
-              className={`w-full text-left rounded-lg px-3 py-3 transition-all border ${
+              className={`control-sidenav__nav-btn shrink-0 md:shrink md:w-full text-left rounded-lg px-3 py-2.5 md:py-3 transition-all border ${
                 active
                   ? 'border-[rgb(232_121_249/0.5)] bg-[rgb(124_58_237/0.15)] shadow-[0_0_20px_rgb(124_58_237/0.12)]'
                   : 'border-transparent hover:border-[var(--violet-border)] hover:bg-[var(--bg-panel)]/40'
@@ -85,21 +85,33 @@ export default function ControlSideNav({
                   </span>
                 )}
               </div>
-              <span className="text-[11px] text-[var(--text-muted)] mt-0.5 block leading-snug">{item.hint}</span>
+              <span className="text-[11px] text-[var(--text-muted)] mt-0.5 hidden md:block leading-snug">
+                {item.hint}
+              </span>
             </button>
           );
         })}
       </nav>
 
-      <div className="p-4 border-t border-[var(--violet-border)]/50 space-y-3 shrink-0">
-        <div className="flex items-baseline justify-between gap-2">
+      <div className="control-sidenav__footer p-3 md:p-4 border-t border-[var(--violet-border)]/50 space-y-2 md:space-y-3 shrink-0">
+        <div className="flex items-center justify-between gap-2 md:block">
           <span className="font-mono-label text-[10px] uppercase tracking-widest text-[var(--text-muted)]">
             Stage {releasedIndex + 1} of {LESSON_STAGES.length}
           </span>
+          <motion.button
+            type="button"
+            disabled={!canRelease}
+            onClick={onReleaseNext}
+            whileHover={canRelease ? { scale: 1.02 } : undefined}
+            whileTap={canRelease ? { scale: 0.98 } : undefined}
+            className="md:hidden shrink-0 btn-release font-mono-label text-[10px] uppercase tracking-wider py-2 px-3.5 rounded-lg disabled:opacity-35 disabled:cursor-not-allowed"
+          >
+            {canRelease ? 'Release ▶' : 'Done'}
+          </motion.button>
         </div>
 
         {canRelease && nextStage ? (
-          <div className="rounded-lg border border-[var(--violet-border)]/40 px-3 py-2.5 bg-[var(--bg-deep)]/60">
+          <div className="hidden sm:block rounded-lg border border-[var(--violet-border)]/40 px-3 py-2.5 bg-[var(--bg-deep)]/60">
             <p className="font-mono-label text-[9px] uppercase tracking-widest text-[var(--text-muted)] mb-1">
               Up next
             </p>
@@ -113,13 +125,13 @@ export default function ControlSideNav({
           onClick={onReleaseNext}
           whileHover={canRelease ? { scale: 1.02 } : undefined}
           whileTap={canRelease ? { scale: 0.98 } : undefined}
-          className="w-full btn-release font-mono-label text-xs uppercase tracking-wider py-3 rounded-lg disabled:opacity-35 disabled:cursor-not-allowed"
+          className="hidden md:block w-full btn-release font-mono-label text-xs uppercase tracking-wider py-3 rounded-lg disabled:opacity-35 disabled:cursor-not-allowed"
         >
           {canRelease ? 'Release ▶' : 'All stages released'}
         </motion.button>
 
         {teacherCue.trim() ? (
-          <div className="rounded-lg border border-[var(--violet-border)]/40 px-3 py-2 bg-[var(--bg-deep)]/60">
+          <div className="hidden lg:block rounded-lg border border-[var(--violet-border)]/40 px-3 py-2 bg-[var(--bg-deep)]/60">
             <p className="font-mono-label text-[9px] uppercase tracking-widest text-[var(--text-muted)] mb-1">
               Teacher cue
             </p>
